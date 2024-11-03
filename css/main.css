@@ -1,0 +1,567 @@
+/*
+
+    JEAN LE BELLEGO, 2024
+    Main Styles
+
+*/
+
+@import "vars.css";
+
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    font: 100%/1 var(--stack);
+    font-variation-settings: var(--light);
+    color: var(--text-color);
+    background: var(--bg-color);
+}
+
+h1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    font-size: calc(1em + 2vw);
+    font-variation-settings: var(--extra-light);
+    background-color: var(--bg-color);
+    z-index: 1;
+
+    & strong {
+        display: block;
+        font-size: 150%;        
+        text-transform: uppercase;
+        color: var(--secondary-color);
+        margin-top: 0.5rem;
+    }
+
+    & img {
+        width: 6.8em;
+        margin-left: auto;
+    }
+
+    & span {
+        display: block;
+        font-size: 80%;
+        text-transform: lowercase;
+        color: var(--text-color);
+    }
+}
+
+h1, h2, h3, h4 {
+	font-weight: normal;
+}
+
+h2 {
+    font-size: calc(1.5em + 0.5vw);
+    font-variation-settings: var(--thin);
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    margin-bottom: 0.8em;
+}
+
+h3 {
+    font-size: calc(1.2em + 1vw);
+    font-variation-settings: var(--bold);
+    color: var(--secondary-color);
+    background-color: var(--bg-color);
+    margin-bottom: 0.8em;
+}
+
+p, li, dt, dd {font-size: calc(0.9em + 0.5vw);}
+
+strong {
+    font-variation-settings: var(--bold);
+}
+
+button {
+    border: none;
+    border-radius: var(--bt-radius);
+    cursor: pointer;
+}
+
+img {max-width: 100%;}
+
+/* --------------------------- PAGE ---------------------------------- */
+
+main {
+    padding-bottom: calc(4rem + 1vw);
+    margin: calc(1rem + 1vw) calc(1.5rem + 1vw) 0;
+}
+
+
+/* --------------------------- HEADER ---------------------------------- */
+
+body > header {
+    position: relative;
+    padding: calc(4.5rem + 5vw) calc(1.5rem + 1vw) calc(1rem + 1vw);
+}
+
+body:not(#home) > header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem 2rem;
+    padding: calc(1rem + 1vw) calc(1.5rem + 1vw);
+    margin-bottom: calc(1rem + 4vmax);
+}
+
+p.logo span {height: 1cap;}
+
+p.logo a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: clamp(1em, calc(1em + 1vw), 2em);
+    font-variation-settings: var(--medium);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-color);
+
+    & svg {
+        flex: 0 0 35px;
+    }
+}
+
+header p.logo {
+    overflow: hidden;
+    width: 35px;
+    white-space: nowrap;
+}
+
+div.tools {
+    display: flex;
+    gap: 1rem;
+
+    & button {     
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.7em;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+        padding: 2px;
+    }
+    
+    & span {height: 1.5cap;}
+    & svg {
+        width: 2.5cap;
+        height: 2.5cap;
+    }
+}
+
+body#home div.tools {
+    position: absolute;
+    top: calc(1rem + 1vw);
+    right: 2.5rem;
+}
+
+div.svg-wrap {
+    position: absolute;
+    width: 100%;
+    top: 2vw;
+    left: -18vw;
+    opacity: 0.5;
+
+    & path {
+        stroke: var(--text-color);
+    }
+}
+
+
+/* --------------------------- FOOTER ---------------------------------- */
+
+div.general-footer {
+    position: relative;
+    min-height: 200px;
+    padding: 1.5rem 0 1rem;
+    background-color: var(--main-dark);
+    background-image: url(../img/logolight.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: bottom -13px;
+    padding: 2rem calc(1.5rem + 1vw) 4rem;
+    z-index: 2;
+
+    & p.logo svg {
+        flex: 0 0 2cap;
+    }
+}
+
+
+footer {
+    position: absolute;
+    bottom: 1.5rem;
+
+    & p {
+        font-size: 0.9em;
+    }
+}
+
+
+/* --------------------------- NAV ---------------------------------- */
+
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--bg-color);
+    padding: 1rem 0 0.5rem 1rem;
+    border-bottom: 1px solid currentColor;
+
+    & ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 65vw;
+        list-style-type: none;
+    }
+
+    & a, a:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+    }
+}
+
+#home nav {display: none;}
+
+
+/* --------------------------- EDITORIAL ---------------------------------- */
+
+.editorial :is(p, dt, dd, li) {
+    line-height: 1.4;
+}
+
+div.intro {
+    max-width: 50em;
+    background-color: var(--bg-color);
+    backdrop-filter: opacity(20%);
+    padding: calc(1rem + 3vw);
+    margin-bottom: calc(2rem + 2vw);
+
+    & p {
+        font-size: calc(1.2em + 1vw);
+    }
+}
+
+h2.whole {
+    position: relative;
+    font-variation-settings: var(--bold);
+    text-transform: uppercase;
+    letter-spacing: -3px;
+    color: var(--n-dark0);
+    background-color: var(--bg-color);
+    margin-bottom: 0;
+}
+
+/* --- ARTICLE --- */
+
+article {
+    /* max-width: 45em; */
+
+    & header {
+        margin-bottom: calc(3rem + 1vw);
+
+        & p {
+            margin-left: 0.5rem;
+        }
+    }
+
+    & h1 {
+        font-size: calc(1em + 6vw);
+        color: var(--secondary-color);
+        background-color: var(--bg-color);
+    }
+
+    & p.p-summary {
+        font-size: calc(1em + 2vw);
+    }
+    & p.competence {
+        font-size: calc(0.8em + 1vw);
+        color: var(--main-color);
+        background-color: var(--bg-color);
+        margin-top: 2rem;
+    }
+    & p.date {
+        font-size: calc(0.7em + 0.5vw);
+    }
+}
+
+picture.master-photo {
+    display: block;
+    margin-bottom: calc(3rem + 1vw);
+}
+
+
+/* -------------------------------- HOME ---------------------------- */
+
+section.main {
+    position: relative;
+    margin-bottom: calc(4rem + 2vw);
+
+    & div.content {
+        background-color: var(--bg-color);
+        padding: calc(2rem + 1vw);
+    }
+
+    & h2.whole {
+        width: fit-content;
+        font-size: clamp(1.5em, calc(1vw * 15.5), 9em);
+    }
+
+    p.picture {
+        max-width: 205px;
+    }
+}
+
+div.skill + div.skill {
+    margin-top: calc(2rem + 1vw);
+}
+
+section.work {
+    position: relative;
+    padding: calc(2rem + 1vw);
+
+    & h2.whole {
+        font-size: clamp(1.5em, calc(1vw * 19), 9em);
+    }
+}
+
+
+ul.work-list {
+    list-style-type: none;
+
+    & li {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        font-size: calc(1.1em + 0.5vw);
+        line-height: 1.2;
+        text-align: center;
+        padding: calc(2.5rem + 2vw);
+        /* background-image: radial-gradient(#EEE, transparent); */
+    }
+
+    & li::before, li::after, span::before, span::after {
+        position: absolute;
+        display: block;
+        content: "";
+        background-image: radial-gradient(var(--text-color), transparent);
+    }
+
+    & li::before {
+        content: none;
+        width: 4px;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    & li::after {
+        width: 100%;
+        height: 4px;
+        bottom: 0;
+        left: 0;
+    }
+
+    & p {margin-top: 1.5rem;}
+
+    & span {
+        display: block;
+        font-size: 70%;
+    }
+    
+    & span::before {
+        width: 4px;
+        height: 35px;
+        bottom: -15px;
+        left: calc(50% - 5px);
+        transform: rotate(45deg);
+    }
+    & span::after {
+        width: 4px;
+        height: 35px;
+        bottom: -15px;
+        left: calc(50% - 5px);
+        transform: rotate(-45deg);
+    }
+}
+
+ul.work-list a {
+    display: block;
+    font-variation-settings: var(--extra-light);
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+ul.work-list a::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+
+/* --------------------------- PLAYER ---------------------------------- */
+
+figure.player {
+    display: flex;
+    flex-direction: column-reverse;
+
+    & figcaption {
+        margin: 0.5rem 0 0 36px;
+    }
+}
+
+button[data-playing] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    border-right: 1px solid #EEE;
+
+    & svg {fill: #FFF;}
+}
+button[data-playing]:hover {
+    background-color: var(--main-color);
+
+    & svg {fill: var(--bg-color);}
+}
+
+button[data-playing=false] svg.play {display: block;}
+button[data-playing=false] svg.pause {display: none;}
+button[data-playing=true] svg.play {display: none;}
+button[data-playing=true] svg.pause {display: block;}
+
+/***************************************************
+ * Generated by SVG Artista on 10/27/2024, 12:56:55 PM
+ * MIT license (https://opensource.org/licenses/MIT)
+ * W. https://svgartista.net
+ **************************************************/
+
+ svg.sound .svg-elem-1 {
+    stroke-dashoffset: 982.32177734375px;
+    stroke-dasharray: 982.32177734375px;
+    transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0s;
+  }
+  
+  svg.sound.active .svg-elem-1 {
+    stroke-dashoffset: 1964.6435546875px;
+  }
+  
+  svg.sound .svg-elem-2 {
+    stroke-dashoffset: 693.6292114257812px;
+    stroke-dasharray: 693.6292114257812px;
+    transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s;
+  }
+  
+  svg.sound.active .svg-elem-2 {
+    stroke-dashoffset: 1387.2584228515625px;
+  }
+  
+  svg.sound .svg-elem-3 {
+    stroke-dashoffset: 512.2031555175781px;
+    stroke-dasharray: 512.2031555175781px;
+    transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.24s;
+  }
+  
+  svg.sound.active .svg-elem-3 {
+    stroke-dashoffset: 1024.4063110351562px;
+  }
+  
+  svg.sound .svg-elem-4 {
+    stroke-dashoffset: 834.7037963867188px;
+    stroke-dasharray: 834.7037963867188px;
+    transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.36s;
+  }
+  
+  svg.sound.active .svg-elem-4 {
+    stroke-dashoffset: 1669.4075927734375px;
+  }
+  
+
+/* ---------------------------- MEDIA QUERIES --------------------------------- */
+
+@media screen and (min-width: 37rem) {
+    header p.logo {
+        position: static;
+        overflow: visible;
+        width: 40%;
+        top: calc(1rem + 1vw);
+        width: 50%;
+        white-space: initial;
+    }
+    header p.logo svg {
+        flex: 0 0 2cap;
+    }
+    
+    article {
+        margin-left: calc(3rem + 1vw);
+
+        & h1 {
+            font-variation-settings: var(--thin);
+        }
+    }
+}
+
+
+@media screen and (min-width: 40rem) and (max-width: 64.9rem) {    
+    div.skill {
+        display: grid;
+        grid-template-columns: 200px auto;
+        align-items: center;
+        gap: 0 4vw;
+    }
+}
+
+@media screen and (min-width: 43rem) {
+    ul.work-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    ul.work-list span::before, ul.work-list span::after {
+        left: 0;
+    }
+    ul.work-list li + li::before {
+        content: "";
+    }
+}
+
+@media screen and (min-width: 65rem) {    
+    section.main div.content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3vw 5vw;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    div.skill + div.skill {margin-top: 0;}
+}

@@ -1,0 +1,63 @@
+/*
+
+    JEAN LE BELLEGO, 2024
+    Custom Properties
+
+*/
+
+@font-face {
+    font-family: "Anek";
+    src: url("AnekDevanagari-VariableFont_wdth,wght.ttf");
+    font-weight: 100 800;
+    font-stretch: 75% 125%;
+    unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131,
+        U+0152-0153, U+02C6, U+02DA, U+02DC, U+0300-0304, U+0307-0308, U+030A,
+        U+0327, U+0900-097F, U+1E9E, U+2007-200D, U+2013-2014, U+2018-201A,
+        U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2070, U+2074-2079,
+        U+2080-2089, U+20AC, U+20B9, U+2212, U+2215, U+2219, U+25CC, U+A8FB,
+        U+FB01-FB02;
+}
+
+:root {
+    
+    --text-color: #FFF;
+    --text-light: #333;
+    --bg-color: #001822;
+    --bg-light: #FFF;
+
+    --main-color: #7DF032;
+    --main-dark: #2E7600;
+    --secondary-color: #0BECE6;
+
+    --n-dark0: rgba(255,255,255,0.3);
+    --n-medium: #99A2A6;
+    
+    --stack: Anek, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+    /*font-variation-settings*/    
+    --thin: "wght" 100;
+    --extra-light: "wght" 200;
+    --light: "wght" 400;
+    --regular: "wght" 500;
+    --medium: "wght" 600;
+    --bold: "wght" 800;
+
+    --condensed: "wdth" 87;
+    --expanded:  "wdth" 110;
+
+    --bt-radius: 2em;
+
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        body.light {
+            --text-color: #333;
+            --bg-color: #F9F9F9;
+            --n-dark0: rgba(0,0,0,0.5);
+            --main-color: #2E7600;
+            --main-dark: #7DF032;
+            --secondary-color: #004D6B;
+        }
+    }
+ }
