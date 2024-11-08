@@ -8,6 +8,7 @@ module.exports = async function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("css/*.*");
   eleventyConfig.addPassthroughCopy("img/**/*.*");
+  eleventyConfig.addPassthroughCopy("audio/**/*.*");
   eleventyConfig.addPassthroughCopy("js/*.js");
   eleventyConfig.addPassthroughCopy("sw.js");
   eleventyConfig.addPassthroughCopy("manifest.json");

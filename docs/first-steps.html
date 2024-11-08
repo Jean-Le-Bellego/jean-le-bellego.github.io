@@ -36,12 +36,12 @@
         
 
         <div class="tools">
-            <button id="sound-switch">
+            <!-- <button id="sound-switch">
                 <svg viewBox="0 0 24 24">
                     <use href="img/sprite.svg#sound-on" />
                 </svg>
                 <span>Son Ambiente</span>
-            </button>
+            </button> -->
             <button id="theme-switch">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" preserveAspectRatio="xMidYMid meet">
                     <circle cx="16.5" cy="16.5" r="11.5" style="fill:#fff; opacity:0.15;"/>
@@ -72,22 +72,162 @@
       src="img/first-steps/first-steps-01-sml.webp" 
       alt="Un aperçu de la scène, avec différents groupes de personnes dançant sous une lumière orange">
   </picture>
-  <header>
-    <h1 class="p-name">First Steps</h1>
-    <p class="p-summary">Expérience de danse immersive</p>
-    <p class="competence">Sound Design, Composition musicale</p>
-    <p class="date">
-      <time class="dt-published" datetime="2023-03-01">Mars 2023</time>
-    </p>
-  </header>
 
-  <div class="e-content">
-    <p>First Steps est une collaboration entre le Tamanoir Immersive Studio 
-      et le Hong Kong Arts Festival.</p>
-    <p>Il s'agit d'une expérience invitant 30 personnes personnes à 
-      monter sur scène </p>
+  <div class="wrapper">
+    <header>
+      <h1 class="p-name" lang="en">First Steps</h1>
+      <p class="p-summary">
+        Performance collective &amp; Son Immersif
+      </p>
+      <p class="competence">
+        Mon rôle&nbsp;: 
+        Sound Design, Composition musicale
+      </p>
+      <p class="date">
+        <time class="dt-published" datetime="2023-03-01">Mars 2023</time>
+      </p>
+    </header>
+
+    <div class="e-content">
+      <p><span lang="en">First Steps</span> convoque la beauté fragile des 
+        premiers pas sur scène. 
+        Des non performeurs, guidés par des instructions transmises par un 
+        casque audio, s'aventurent à la recherche de leur danse intérieure. 
+        Au fil de leur voyage, ils vont apprivoiser la lumière, l'espace et 
+        le regard du public.</p>
+
+      <p>Ce spectacle veut faire vivre le frisson de la rencontre entre 5 
+        danseurs et 24 membres du public sur scène, devant une salle de 250 
+        spectateurs. Il est le fruit d'une collaboration inédite entre le 
+        <strong>Tamanoir Immersive Studio</strong> et le 
+        <strong lang="en">Hong Kong Art Festival</strong>.</p>
+
+      <p class="photo">
+        <img 
+          src="img/first-steps/first-steps-02.webp" 
+          alt="Sur un plateau sombre, on voit seulement les mains des participants, 
+          qui semblent dancer">
+      </p>
+        
+      <p>S'adressant autant aux participants sur scène qu'aux spectateurs, la 
+        création sonore répond à deux enjeux&nbsp;: 
+        donner à expérimenter le son en tant que matière tangible, pouvant influencer 
+        les déplacements, les attitudes des participants dans l'espace ; créer des 
+        tableaux et des ambiances, facilitant la proximité du public avec les 
+        performeurs non initiés à la scène.</p>
+
+        <div class="video-wrap">
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/e-z8hXfH0oI?si=Y0SB6fz88kwlRtos" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+        </div>      
+    </div>
+
+    <section class="audio-wrap">
+      <h2>Ecoute</h2>
+      <figure class="player">
+        <figcaption>Shoes Dance</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/ShoesDance.ogg" type="audio/ogg" />
+            <source src="audio/MP3/ShoesDance.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+              <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>Play</title>
+                  <path d="M16.3944 12.0001L10 7.7371V16.263L16.3944 12.0001ZM19.376 12.4161L8.77735 19.4818C8.54759 19.635 8.23715 19.5729 8.08397 19.3432C8.02922 19.261 8 19.1645 8 19.0658V4.93433C8 4.65818 8.22386 4.43433 8.5 4.43433C8.59871 4.43433 8.69522 4.46355 8.77735 4.5183L19.376 11.584C19.6057 11.7372 19.6678 12.0477 19.5146 12.2774C19.478 12.3323 19.4309 12.3795 19.376 12.4161Z"></path>
+              </svg>
+              <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>Pause</title>
+                  <path d="M6 5H8V19H6V5ZM16 5H18V19H16V5Z"></path>
+              </svg>
+          </button>	
+          <div class="wave"></div>		  
+        </div>
+      </figure>
+      <figure class="player">
+        <figcaption>Duende</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/Duende.ogg" type="audio/ogg" />
+            <source src="audio/MP3/Duende.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+              <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>Play</title>
+                  <path d="M16.3944 12.0001L10 7.7371V16.263L16.3944 12.0001ZM19.376 12.4161L8.77735 19.4818C8.54759 19.635 8.23715 19.5729 8.08397 19.3432C8.02922 19.261 8 19.1645 8 19.0658V4.93433C8 4.65818 8.22386 4.43433 8.5 4.43433C8.59871 4.43433 8.69522 4.46355 8.77735 4.5183L19.376 11.584C19.6057 11.7372 19.6678 12.0477 19.5146 12.2774C19.478 12.3323 19.4309 12.3795 19.376 12.4161Z"></path>
+              </svg>
+              <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>Pause</title>
+                  <path d="M6 5H8V19H6V5ZM16 5H18V19H16V5Z"></path>
+              </svg>
+          </button>	
+          <div class="wave"></div>		  
+        </div>
+      </figure>
+      <figure class="player">
+        <figcaption lang="en">The Mask</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/The-Mask.ogg" type="audio/ogg" />
+            <source src="audio/MP3/The-Mask.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+              <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>Play</title>
+                  <path d="M16.3944 12.0001L10 7.7371V16.263L16.3944 12.0001ZM19.376 12.4161L8.77735 19.4818C8.54759 19.635 8.23715 19.5729 8.08397 19.3432C8.02922 19.261 8 19.1645 8 19.0658V4.93433C8 4.65818 8.22386 4.43433 8.5 4.43433C8.59871 4.43433 8.69522 4.46355 8.77735 4.5183L19.376 11.584C19.6057 11.7372 19.6678 12.0477 19.5146 12.2774C19.478 12.3323 19.4309 12.3795 19.376 12.4161Z"></path>
+              </svg>
+              <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>Pause</title>
+                  <path d="M6 5H8V19H6V5ZM16 5H18V19H16V5Z"></path>
+              </svg>
+          </button>	
+          <div class="wave"></div>		  
+        </div>
+      </figure>
+      <figure class="player">
+        <figcaption lang="en">The Wind</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/The-Wind.ogg" type="audio/ogg" />
+            <source src="audio/MP3/The-Wind.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+              <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>Play</title>
+                  <path d="M16.3944 12.0001L10 7.7371V16.263L16.3944 12.0001ZM19.376 12.4161L8.77735 19.4818C8.54759 19.635 8.23715 19.5729 8.08397 19.3432C8.02922 19.261 8 19.1645 8 19.0658V4.93433C8 4.65818 8.22386 4.43433 8.5 4.43433C8.59871 4.43433 8.69522 4.46355 8.77735 4.5183L19.376 11.584C19.6057 11.7372 19.6678 12.0477 19.5146 12.2774C19.478 12.3323 19.4309 12.3795 19.376 12.4161Z"></path>
+              </svg>
+              <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                  <title>Pause</title>
+                  <path d="M6 5H8V19H6V5ZM16 5H18V19H16V5Z"></path>
+              </svg>
+          </button>	
+          <div class="wave"></div>		  
+        </div>
+      </figure>
+    </section>
   </div>
 </article>
+
+<div class="inner-nav">
+  <ul>
+    <li lang="en">
+        <a href="glenfiddich-time.html">Glenfiddich Time Re:Imagined</a>
+      </li>
+    <li>
+        <a href="la-boussole.html">La Boussole de la Salle Ovale</a>
+    </li>
+  </ul>
+</div>
+
+<script src="https://unpkg.com/wavesurfer.js@7"></script>
+<script src="js/player.js"></script>
         </main>
     </div>
 
@@ -105,31 +245,8 @@
         </footer>
     </div>
 
-    <script>
-        const soundSvg = document.querySelector('svg.sound');
-        const btTheme = document.getElementById('theme-switch');
-        const bodyEL = document.querySelector('body');
-        const colorScheme = document.querySelector('meta[name="color-scheme"]');
-        const mode = localStorage.getItem("mode");
-
-        colorScheme.setAttribute("content", "dark");
-        
-        setTimeout(() => {
-            soundSvg.classList.add('active');
-        }, 1500);
-        
-        btTheme.addEventListener('click', (e) => {
-            if(colorScheme.getAttribute("content") == "dark") {
-                colorScheme.setAttribute("content", "light");
-                localStorage.setItem("mode", "light");
-                bodyEL.classList.add('light');
-            } else {
-                colorScheme.setAttribute("content", "dark");
-                localStorage.setItem("mode", "dark");
-                bodyEL.classList.remove('light');
-            }            
-        });
-    </script>
+    <script src="/js/controls.js"></script>
+    <script src="/sw.js"></script>
     
 </body>
 

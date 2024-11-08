@@ -40,12 +40,12 @@
         
 
         <div class="tools">
-            <button id="sound-switch">
+            <!-- <button id="sound-switch">
                 <svg viewBox="0 0 24 24">
                     <use href="img/sprite.svg#sound-on" />
                 </svg>
                 <span>Son Ambiente</span>
-            </button>
+            </button> -->
             <button id="theme-switch">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33" preserveAspectRatio="xMidYMid meet">
                     <circle cx="16.5" cy="16.5" r="11.5" style="fill:#fff; opacity:0.15;"/>
@@ -174,15 +174,36 @@
         </g>
       </svg>
       <p>
-        <a href="#" lang="en">Glenffidich Time Re:imagined</a>
+        <a href="glenfiddich-time.html" lang="en">Glenfiddich Time Re:imagined</a>
         <span>Sound Design/ Composition Musicale</span>
       </p>
     </li>
     <li>
-      <img src="img/first-steps.jpg" alt="">
+      <img src="img/first-steps/thumb.webp" alt="">
       <p>
         <a href="first-steps.html" lang="en">First Steps</a>
         <span>Sound Design/ Composition Musicale</span>
+      </p>
+    </li>
+    <li>
+      <img src="img/laBoussole/intro.webp" alt="">
+      <p>
+        <a href="la-boussole.html">La Boussole de la Salle Ovale</a>
+        <span>Sound Design/ Composition Musicale</span>
+      </p>
+    <!-- </li>
+    <li>
+      <img src="img/naufrages/naufrages-thumb.webp" alt="">
+      <p>
+        <a href="naufrages.html">Les Naufragés</a>
+        <span>Sound Design/ Composition Musicale</span>
+      </p>
+    </li> -->
+    <li>
+      <img src="img/unplug/unplug-thumb.webp" alt="">
+      <p>
+        <a href="unplug.html">Unplug</a>
+        <span>Sound Design et mixage multicanal</span>
       </p>
     </li>
   </ul>
@@ -204,31 +225,8 @@
         </footer>
     </div>
 
-    <script>
-        const soundSvg = document.querySelector('svg.sound');
-        const btTheme = document.getElementById('theme-switch');
-        const bodyEL = document.querySelector('body');
-        const colorScheme = document.querySelector('meta[name="color-scheme"]');
-        const mode = localStorage.getItem("mode");
-
-        colorScheme.setAttribute("content", "dark");
-        
-        setTimeout(() => {
-            soundSvg.classList.add('active');
-        }, 1500);
-        
-        btTheme.addEventListener('click', (e) => {
-            if(colorScheme.getAttribute("content") == "dark") {
-                colorScheme.setAttribute("content", "light");
-                localStorage.setItem("mode", "light");
-                bodyEL.classList.add('light');
-            } else {
-                colorScheme.setAttribute("content", "dark");
-                localStorage.setItem("mode", "dark");
-                bodyEL.classList.remove('light');
-            }            
-        });
-    </script>
+    <script src="/js/controls.js"></script>
+    <script src="/sw.js"></script>
     
 </body>
 
