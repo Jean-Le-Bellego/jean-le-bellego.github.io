@@ -576,6 +576,7 @@ section.audio-wrap {
     padding: calc(1.5rem + 1vw);
 
     & h2 {
+        font-variation-settings: var(--light);
         background-color: rgba(0,0,0,0);
     }
 }
@@ -742,6 +743,7 @@ button[aria-checked=true] svg.pause {display: block;}
     article.h-entry div.wrapper {
         display: grid;
         grid-template-columns: auto 0.5fr;
+        align-items: start;
         gap: 0 8vw;
         max-width: 87rem;
         margin: 0 auto;

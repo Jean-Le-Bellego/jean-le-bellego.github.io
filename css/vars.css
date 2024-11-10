@@ -16,6 +16,7 @@
         U+201C-201E, U+2022, U+2026, U+2039-203A, U+2044, U+2070, U+2074-2079,
         U+2080-2089, U+20AC, U+20B9, U+2212, U+2215, U+2219, U+25CC, U+A8FB,
         U+FB01-FB02;
+    font-display: swap;
 }
 
 :root {
@@ -30,7 +31,7 @@
     --secondary-color: #56B1C6;
 
     --n-dark0: rgba(255,255,255,0.3);
-    --n-dark1: rgba(255,255,255,0.15);
+    --n-dark1: rgba(255,255,255,0.1);
     --n-medium: #99A2A6;
 
     --footer-bg: rgba(255,255,255,0.15);
