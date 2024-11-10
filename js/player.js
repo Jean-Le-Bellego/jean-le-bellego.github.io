@@ -25,7 +25,7 @@ if(audioElements.length > 0) {
       width: '85%',
       splitChannels: false,
       normalize: false,
-      waveColor: "#333",
+      waveColor: "#000",
       progressColor: "#56B1C6",
       cursorColor: "#F1D648",
       cursorWidth: 2,
@@ -34,9 +34,7 @@ if(audioElements.length > 0) {
       url: urlSource,
     });
 
-    playButton.addEventListener(
-      "click",
-      (e) => {
+    playButton.addEventListener("click", (e) => {
         let theButton = e.target;
         // Check if context is in suspended state (autoplay policy)
         if (audioContext.state === "suspended") {
@@ -45,24 +43,30 @@ if(audioElements.length > 0) {
 
         // Play or pause track depending on state
         if (theButton.dataset.playing === "false") {
-          sound.play();
+          //sound.play();
           theButton.dataset.playing = "true";
           wavesurfer.play();
         } else if (theButton.dataset.playing === "true") {
-          sound.pause();
+          //sound.pause();
           theButton.dataset.playing = "false";
           wavesurfer.pause();
         }
-      },
-      false
+
+        let state = theButton.getAttribute('aria-checked') === "true" ? true : false;
+	      theButton.setAttribute( 'aria-checked', state ? "false" : "true" );
+
+        wavesurfer.on('finish', () => {
+          theButton.dataset.playing = "false";
+          theButton.setAttribute( "aria-checked", "false" );
+        });
+
+      }, false
     );
 
-    sound.addEventListener(
-      "ended",
-      () => {
-        playButton.dataset.playing = "false";
-      },
-      false
-    );
+    // sound.addEventListener("ended", () => {
+    //     playButton.dataset.playing = "false";
+    //     playButton.setAttribute( "aria-checked", "false" );
+    //     console.log(playButton.dataset.playing)
+    // }, false);
   });
 }

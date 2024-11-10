@@ -74,7 +74,7 @@ h3 {
     font-variation-settings: var(--bold);
     color: var(--secondary-color);
     background-color: var(--bg-color);
-    margin-bottom: 0.8em;
+    margin-bottom: 0.5em;
 }
 
 p, li, dt, dd {font-size: calc(0.9em + 0.5vw);}
@@ -119,19 +119,19 @@ body:not(#home) > header {
     align-items: center;
     gap: 1rem 2rem;
     padding: calc(1rem + 1vw) calc(1.5rem + 1vw);
-    margin-bottom: calc(1rem + 4vmax);
 }
 
 p.logo span {height: 1cap;}
 
 p.logo a {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 1rem;
     font-size: clamp(1em, calc(1em + 1vw), 2em);
     font-variation-settings: var(--medium);
     text-transform: uppercase;
     text-decoration: none;
+    white-space: nowrap;
     color: var(--text-color);
 
     & svg {
@@ -202,9 +202,6 @@ div.general-footer {
     padding: 2rem calc(1.5rem + 1vw) 4rem;
     z-index: 2;
 
-    & p.logo {
-        width: 20em;
-    }
     & p.logo svg {
         flex: 0 0 2cap;
     }
@@ -324,7 +321,9 @@ div.e-content {
 
 picture.master-photo {
     display: block;
-    margin-bottom: calc(3rem + 1vw);
+    margin-bottom: calc(1.5rem + 4vw);
+
+    & img {width: 100%;}
 }
 
 .credit {
@@ -339,14 +338,14 @@ p.photo, div.e-content p + p.photo {
 }
 
 @media screen and (max-width: 65rem) {
-    section.audio-wrap {
+    /* section.audio-wrap {
         padding: 1.5rem;
         border: 1px solid var(--main-color);
 
         & h2 {
             background-color: rgba(0,0,0,0);
         }
-    }
+    } */
 }
 
 div.credits {
@@ -397,6 +396,7 @@ div.inner-nav ul {
 
     & li {
         line-height: 1.2;
+        font-variation-settings: var(--regular);
     }
 
     & li a {
@@ -409,13 +409,13 @@ div.inner-nav ul {
     }
 
     & li:first-of-type a {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M8 12L14 6V18L8 12Z' fill='%23FFF'%3E%3C/path%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFF'%3E%3Cpath d='M8 12L14 6V18L8 12Z'%3E%3C/path%3E%3C/svg%3E");
         background-position: 0 0.1em;
         padding-left: 30px;
     }
     
     & li:last-of-type a {
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='currentColor'%3E%3Cpath d='M16 12L10 18V6L16 12Z' fill='%23FFF'%3E%3C/path%3E%3C/svg%3E");
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFF'%3E%3Cpath d='M16 12L10 18V6L16 12Z'%3E%3C/path%3E%3C/svg%3E");
         background-position: right 0.1em;
         padding-right: 30px;
     }
@@ -430,16 +430,19 @@ section.main {
 
     & div.content {
         background-color: var(--bg-color);
-        padding: calc(2rem + 1vw);
     }
 
     & h2.whole {
         width: fit-content;
         font-size: clamp(1.5em, calc(1vw * 15.5), 9em);
     }
+}
 
-    p.picture {
-        max-width: 205px;
+p.picture {
+    max-width: 205px;
+
+    & svg {
+        max-width: 180px;
     }
 }
 
@@ -449,7 +452,6 @@ div.skill + div.skill {
 
 section.work {
     position: relative;
-    padding: calc(2rem + 1vw);
 
     & h2.whole {
         font-size: clamp(1.5em, calc(1vw * 19), 9em);
@@ -469,8 +471,7 @@ ul.work-list {
         font-size: calc(1.1em + 0.5vw);
         line-height: 1.2;
         text-align: center;
-        padding: calc(2.5rem + 2vw);
-        /* background-image: radial-gradient(#EEE, transparent); */
+        padding: calc(2.5rem + 2vw) 0;
     }
 
     & li::before, li::after, span::before, span::after {
@@ -558,6 +559,17 @@ div.video-wrap {
       }
 } 
 
+section.audio-wrap {
+    box-sizing: border-box;
+    max-width: 50em;
+    background-color: var(--n-dark1);
+    padding: calc(1.5rem + 1vw);
+
+    & h2 {
+        background-color: rgba(0,0,0,0);
+    }
+}
+
 figure.player {
     display: flex;
     flex-direction: column-reverse;
@@ -602,10 +614,16 @@ button[data-playing]:hover {
     }
 }
 
-button[data-playing=false] svg.play {display: block;}
-button[data-playing=false] svg.pause {display: none;}
-button[data-playing=true] svg.play {display: none;}
-button[data-playing=true] svg.pause {display: block;}
+button[aria-checked=false] svg.play {display: block;}
+button[aria-checked=false] svg.pause {display: none;}
+button[aria-checked=true] svg.play {display: none;}
+button[aria-checked=true] svg.pause {display: block;}
+
+/* ---------------------------- UTILITIES --------------------------------- */
+
+.frame {
+    border: 1px solid var(--n-dark0);
+}
 
 
 /***************************************************
@@ -657,6 +675,19 @@ button[data-playing=true] svg.pause {display: block;}
 
 /* ---------------------------- MEDIA QUERIES --------------------------------- */
 
+@media screen and (min-width: 31rem) {
+    ul.work-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6vw;
+        max-width: 1000px;
+        margin: 3vw auto;
+    }
+    ul.work-list li {
+        padding: 0;
+    }
+}
+
 @media screen and (min-width: 37rem) {
     header p.logo {
         position: static;
@@ -697,19 +728,6 @@ button[data-playing=true] svg.pause {display: block;}
     }
 }
 
-@media screen and (min-width: 43rem) {
-    ul.work-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    ul.work-list span::before, ul.work-list span::after {
-        left: 0;
-    }
-}
-
 @media screen and (min-width: 65rem) {
     article.h-entry div.wrapper {
         display: grid;
@@ -723,17 +741,23 @@ button[data-playing=true] svg.pause {display: block;}
     }    
 
     section.audio-wrap {
-        min-width: 252px;
+        min-width: 334px;
     }
+
+    div.e-content {margin-bottom: 0;}
     
     section.main div.content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 3vw 5vw;
+        gap: 3vw 6vw;
         max-width: 1000px;
         margin-left: auto;
         margin-right: auto;
     }
 
     div.skill + div.skill {margin-top: 0;}
+
+    div.video-wrap:last-child {
+        margin-bottom: 0;
+    }
 }
