@@ -506,8 +506,6 @@ ul.work-list {
         left: 0;
     }
 
-    & p {margin-top: 1.5rem;}
-
     & span {
         display: block;
         font-size: 70%;
