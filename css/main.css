@@ -63,7 +63,7 @@ h1, h2, h3, h4 {
 
 h2 {
     font-size: calc(1.5em + 1vw);
-    font-variation-settings: var(--bold);
+    font-variation-settings: var(--regular);
     color: var(--secondary-color);
     background-color: var(--bg-color);
     margin-bottom: 0.8em;
@@ -71,7 +71,7 @@ h2 {
 
 h3 {
     font-size: calc(1.35em + 1vw);
-    font-variation-settings: var(--bold);
+    font-variation-settings: var(--regular);
     color: var(--secondary-color);
     background-color: var(--bg-color);
     margin-bottom: 0.5em;
@@ -506,6 +506,28 @@ div.work-intro {
     }
 }
 
+@keyframes high1 {
+    0% {height: 0px;}
+    25% {height: 20px;}
+    50% {height: 15px;}
+    75% {height: 6px;}
+    100% {height: 10px;}
+}
+@keyframes high2 {
+    0% {height: 0px; background-color: var(--text-color);}
+    25% {height: 25px;}
+    50% {height: 5px;}
+    75% {height: 18px; background-color: var(--main-color);}
+    100% {height: 3px;}
+}
+@keyframes high3 {
+    0% {height: 0px;}
+    25% {height: 13px;}
+    50% {height: 2px;}
+    75% {height: 25px;}
+    100% {height: 10px;}
+}
+
 ul.work-list {
     list-style-type: none;
 
@@ -523,6 +545,8 @@ ul.work-list {
     }
 
     & p {
+        display: flex;
+        flex-direction: column;
         font-size: 100%;
     }
 
@@ -530,48 +554,52 @@ ul.work-list {
         padding-top: 0;
     }
 
-    & li::before, li::after, span::before, span::after {
+    & li::before, li::after, li span::before {
         position: absolute;
         display: block;
-        content: none;
-        background-image: radial-gradient(var(--text-color), transparent);
+        content: "";
+        width: 20px;
+        height: 0px;
+        background-color: var(--text-color);
+        transition: all 1s;
+        z-index: 3;
     }
 
     & li::before {
-        content: none;
-        width: 4px;
-        height: 100%;
-        top: 0;
-        left: 0;
+        bottom: 50%;
+        left: calc(50% - 30px);
     }
-    & li::after {
-        content: none;
-        width: 100%;
-        height: 4px;
-        bottom: 0;
-        left: 0;
+    & li::after {        
+        bottom: 50%;
+        left: calc(50% - 1px);
+    }
+    & li span::before {
+        bottom: 50%;
+        left: calc(50% + 30px);
+    }
+
+    & li:hover::before {
+        animation-duration: 1s;
+        animation-name: high1;
+    }
+    & li:hover::after {
+        animation-duration: 1s;
+        animation-name: high2;
+    }
+    & li:hover span::before {
+        animation-duration: 1s;
+        animation-name: high3;
     }
 
     & span {
         display: block;
         font-size: clamp(0.95rem, 90%, 1.25rem);
     }
-    
-    & span::before {
-        content: none;
-        width: 4px;
-        height: 35px;
-        bottom: -15px;
-        left: calc(50% - 5px);
-        transform: rotate(45deg);
-    }
-    & span::after {
-        content: none;
-        width: 4px;
-        height: 35px;
-        bottom: -15px;
-        left: calc(50% - 5px);
-        transform: rotate(-45deg);
+
+    & strong {        
+        display: block;
+        font-size: clamp(0.95rem, 90%, 1.25rem);
+        font-variation-settings: var(--regular);
     }
 }
 
@@ -590,6 +618,10 @@ ul.work-list a::after {
     height: 100%;
     top: 0;
     left: 0;
+}
+
+ul.work-list a:hover::after {
+    backdrop-filter: blur(2px);
 }
 
 
@@ -674,6 +706,64 @@ button[aria-checked=false] svg.pause {display: none;}
 button[aria-checked=true] svg.play {display: none;}
 button[aria-checked=true] svg.pause {display: block;}
 
+
+section.work-entry {
+    & .description {
+        margin-bottom: 2.5vw;
+    }
+
+    & h2 {
+        font-variation-settings: var(--regular);
+        margin-bottom: 0.25em;
+    }
+}
+
+section.work-entry + section.work-entry {
+    margin-top: 5vw;
+}
+
+div.slider {
+    display: none;
+    margin-bottom: 10vw;
+
+    & h2 {
+        font-size: clamp(1em, calc(1em + 0.5vw), 1.5em);
+        color: var(--main-color);
+        background-color: transparent;
+        margin-bottom: 0;
+    }
+
+    & ul {
+        overflow: hidden;
+        display: flex;
+        list-style-type: none;
+    }
+
+    & li {
+        font-size: clamp(2em, calc(2em + 0.5vw), 2.5em);
+        text-transform: uppercase;
+        white-space: nowrap;
+        padding-top: 0.25em;
+    }
+
+    & li + li {
+        padding-left: 0.5em;
+        margin-left: 0.5em;
+    }
+    & li + li::before {
+        content: "";
+        display: inline-block;
+        position: relative;
+        top: -0.25cap;
+        left: -0.7cap;
+        width: 0.5cap;
+        height: 0.5cap;
+        background-color: currentColor;
+        border-radius: 0.5cap;
+    }
+}
+
+
 /* ---------------------------- UTILITIES --------------------------------- */
 
 .frame {
@@ -729,6 +819,13 @@ button[aria-checked=true] svg.pause {display: block;}
   
 
 /* ---------------------------- MEDIA QUERIES --------------------------------- */
+
+@media (prefers-reduced-motion) {
+    * {
+        animation-name: none;
+        animation-duration: 0;
+    }
+}
 
 @media screen and (min-width: 31rem) {
     ul.work-list {
