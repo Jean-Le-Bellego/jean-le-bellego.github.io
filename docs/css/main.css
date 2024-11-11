@@ -621,7 +621,7 @@ ul.work-list a::after {
 }
 
 ul.work-list a:hover::after {
-    backdrop-filter: blur(2px);
+    backdrop-filter: brightness(60%);
 }
 
 
