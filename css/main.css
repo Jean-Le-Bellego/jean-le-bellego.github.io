@@ -243,7 +243,6 @@ footer {
 /* --------------------------- NAV ---------------------------------- */
 
 nav {
-    display: none;
     position: fixed;
     width: 100%;
     bottom: 0;
@@ -403,6 +402,7 @@ div.credits {
 
     & dd {
         padding-left: 1.5rem;
+        font-size: calc(0.95em + 0.5vw)
     }
 
     & dd + dt {
@@ -850,7 +850,7 @@ div.slider {
         grid-template-columns: repeat(2, 1fr);
         gap: 5vw;
         max-width: 1000px;
-        margin: 0 auto 5vw;
+        margin: 5vw auto;
     }
     ul.work-list li {
         padding: 0;
@@ -943,28 +943,10 @@ div.slider {
 
 @media screen and (min-width: 87.5rem) {
     nav {
-        bottom: auto;
-        top: clamp(350px, 50vh, 450px);        
-        right: 5vw;
-        left: auto;
-        width: 15rem;
-        border: none;
-
-        & ul {
-            flex-direction: column;
-        }
-    }    
-
-    /* nav {
-        bottom: auto;
-        top: 0;
+        position: relative;
         background-color: rgba(0,0,0,0);
-        border-top: none;
-        border-bottom: 1px solid currentColor;
-
-        & ul {
-            padding: 0 calc(1.5rem + 1vw);
-        }
+        margin-left: calc(3.5rem + 1vw);
+        border-top: 1px solid var(--n-medium);
 
         & a, a:visited {
             color: var(--text-color);
@@ -972,5 +954,11 @@ div.slider {
         }
 
         & svg {display: none;}
-    } */
+    }
+
+    #home nav {
+        margin-left: 0;
+        margin-top: 2rem;
+        border-bottom: 1px solid var(--n-medium);
+    }
 }
