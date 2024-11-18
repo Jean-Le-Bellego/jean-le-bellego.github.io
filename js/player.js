@@ -62,11 +62,5 @@ if(audioElements.length > 0) {
 
       }, false
     );
-
-    // sound.addEventListener("ended", () => {
-    //     playButton.dataset.playing = "false";
-    //     playButton.setAttribute( "aria-checked", "false" );
-    //     console.log(playButton.dataset.playing)
-    // }, false);
   });
 }
