@@ -1,0 +1,121 @@
+---
+layout: layout.html
+currSection: work
+permalink: a-city-of-foxes.html
+ogUrl: a-city-of-foxes.html
+ogTitle: "A City of Foxes"
+ogDescription: "Expérience Immersive/ Réalité Virtuelle"
+ogImage: "img/foxes/thumb.webp"
+---
+
+<article class="h-entry editorial">
+  <picture class="master-photo">
+    <source srcset="img/foxes/foxes-top.webp" media="(min-width: 1000px)" />
+    <img 
+      src="img/foxes/foxes-top-sml.webp" 
+      alt="Une illustration d'un desert, la nuit, avec une grande lune blanche">
+  </picture>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="p-name" lang="en">
+        A City of Foxes
+      </h1>
+      <p class="p-summary">
+        Expérience Immersive/ Réalité Virtuelle
+      </p>
+      <p class="competence">
+        Mon rôle&nbsp;: 
+        Sound Design, Composition musicale
+      </p>
+      <p class="date">
+        <time class="dt-published" datetime="2021-08-01">Août 2021</time>
+      </p>
+    </header>
+
+    <div class="e-content">
+      <p>
+        <strong>A City of Foxes</strong> est une approche tendre et 
+        intime de la narration immersive en réalité virtuelle où les 
+        participants font la rencontre d'un renard philosophe qui 
+        s'interroge sur ce que signifie la fraternité en temps de guerre.
+      </p>
+      <p>
+        Cette expérience a été imaginée par Nihaarika Negi, une artiste 
+        indienne interdisciplinaire travaillant au niveau international, 
+        dont le travail commence par le corps et prend son envol à 
+        travers les médiums de la performance, de l'écriture, de la 
+        mise en scène et de la production.
+      </p>      
+
+      <p class="photo">
+        <img src="img/foxes/foxes-1.webp" 
+          alt="Les participants de l'expérience, assis par terre en cercle, avec leurs 
+          oculus, illuminés seulement par des bougies">
+      </p>
+
+      <div class="video-wrap">
+        <video controls width="100%">
+          <source src="/img/foxes/ACOF_CinematicVideo.mp4" type="video/mp4" />
+        </video>
+      </div> 
+
+      <!-- <div class="credits">
+        <h2>Crédits</h2>
+        
+        <dl>
+          <dt>Écriture et réalisation</dt>
+          <dd>Sam Lecoeur</dd>
+          <dt>Production</dt>
+          <dd>Voyelle Acker, Vincent Guttmann, Rémi Large</dd>
+          <dt>Création visuelle</dt>
+          <dd>Claire Allante</dd>
+          <dt>Musique</dt>
+          <dd>Alexandre Bobe, Jean Le Bellego</dd>
+          <dt>Sound design</dt>
+          <dd>Alexandre Bobe, Jean Le Bellego</dd>
+          <dt>Actrices</dt>
+          <dd>Naïs El Fassi, Claire Saumande Karageuzian</dd>
+        </dl>
+      </div> -->
+    </div>
+
+    <section class="audio-wrap">
+      <h2>Écoute</h2>
+      <figure class="player">
+        <figcaption>Bar</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/Bar.ogg" type="audio/ogg" />
+            <source src="audio/MP3/Bar.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <title>Lire audio</title>
+              <use href="/img/sprite.svg#play">
+            </svg>
+            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>Pauser audio</title>
+                <use href="/img/sprite.svg#pause">
+            </svg>
+          </button>		
+          <div class="wave"></div>		  
+        </div>
+      </figure>
+    </section>
+  </div>
+</article>
+          
+<div class="inner-nav">
+  <ul>
+    <li lang="en">
+        <a href="glenfiddich-time.html">Glenfiddich Time Re:Imagined</a>
+      </li>
+    <li lang="en">
+        <a href="first-steps.html">Frist Steps</a>
+    </li>
+  </ul>
+</div>
+
+<script src="https://unpkg.com/wavesurfer.js@7"></script>
+<script src="js/player.js"></script>

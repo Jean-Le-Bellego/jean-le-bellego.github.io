@@ -59,6 +59,11 @@ if(audioElements.length > 0) {
           theButton.dataset.playing = "false";
           theButton.setAttribute( "aria-checked", "false" );
         });
+        wavesurfer.on('click', () => {          
+          theButton.dataset.playing = "true";
+          theButton.setAttribute( "aria-checked", "true" );
+          wavesurfer.play();
+        })        
 
       }, false
     );

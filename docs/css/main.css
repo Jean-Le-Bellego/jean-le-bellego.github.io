@@ -88,7 +88,17 @@ a {
 }
 
 a[target]::after {
-    content: " : Ouvre nouvelle fenêtre";
+    display: inline-block;
+    overflow: hidden;
+    content: "Ouvre nouvelle fenêtre";
+    width: 1em;
+    height: 1em;
+    text-indent: 50em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z' fill='%23F1D648'/%3E%3C/svg%3E");
+    background-size: 0.8em;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    margin-left: .3em;
 }
 
 strong {
@@ -243,20 +253,26 @@ footer {
 /* --------------------------- NAV ---------------------------------- */
 
 nav {
+    box-sizing: border-box;
     position: fixed;
     width: 100%;
     bottom: 0;
     left: 0;
     background-color: var(--bg-color);
-    padding: 1rem 0 0.5rem 1rem;
+    padding: 1rem 2vw 0.5rem;
     border-top: 4px solid var(--main-color);
     z-index: 10;
 
     & ul {
         display: flex;
+        justify-content: space-around;
         align-items: center;
         gap: 2rem;
         list-style-type: none;
+    }
+
+    & li {
+        font-size: 0.9em;
     }
 
     & a, a:visited {
@@ -584,18 +600,18 @@ ul.work-list {
         left: calc(50% + 15px);
     }
 
-    & li:hover::before {
-        animation-duration: 1s;
+    /* & li:hover::before {
+        animation-duration: 0.5s;
         animation-name: high1;
     }
     & li:hover::after {
-        animation-duration: 1s;
+        animation-duration: 0.5s;
         animation-name: high2;
     }
     & li:hover span::before {
-        animation-duration: 1s;
+        animation-duration: 0.5s;
         animation-name: high3;
-    }
+    } */
 
     & span {
         display: block;
@@ -627,7 +643,7 @@ ul.work-list a::after {
 }
 
 ul.work-list a:hover::after {
-    backdrop-filter: brightness(60%);
+    backdrop-filter: brightness(160%);
 }
 
 
@@ -845,11 +861,14 @@ div.slider {
 }
 
 @media screen and (min-width: 31rem) {
+    nav li {
+        font-size: calc(0.95em + 0.75vw);
+    }
     ul.work-list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5vw;
-        max-width: 1000px;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 300px));
+        gap: 4vw;
+        max-width: 1200px;
         margin: 5vw auto;
     }
     ul.work-list li {
@@ -931,7 +950,7 @@ div.slider {
         grid-template-columns: 1fr 1fr;
         gap: 3vw 10vw;
         max-width: 1200px;
-        margin-left: 10vw;
+        margin: 0 auto;
     }
 
     div.skill + div.skill {margin-top: 0;}
@@ -945,20 +964,28 @@ div.slider {
     nav {
         position: relative;
         background-color: rgba(0,0,0,0);
+        padding-left: 0;
         margin-left: calc(3.5rem + 1vw);
         border-top: 1px solid var(--n-medium);
+
+        & ul {
+            justify-content: flex-start;
+            gap: 8vw;
+        }
 
         & a, a:visited {
             color: var(--text-color);
             background-color: rgba(0,0,0,0);
         }
 
-        & svg {display: none;}
+        & a:hover {
+            color: var(--main-color);
+        }
     }
 
     #home nav {
         margin-left: 0;
-        margin-top: 2rem;
+        margin-top: calc(2.5rem + 1vw);
         border-bottom: 1px solid var(--n-medium);
     }
 }
