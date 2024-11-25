@@ -675,6 +675,11 @@ div.video-wrap {
       }
 } 
 
+div.video-wrap.foxes {
+    height: fit-content;
+    padding-bottom: 0;
+}
+
 section.audio-wrap {
     box-sizing: border-box;
     max-width: 50em;
