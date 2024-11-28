@@ -864,6 +864,14 @@ div.slider {
   }
   
 
+/* ----------------- A PROPOS ------------- */
+
+div.main-photo {
+    margin: 5vw 0;
+}
+
+
+
 /* ---------------------------- MEDIA QUERIES --------------------------------- */
 
 @media (prefers-reduced-motion) {
@@ -925,6 +933,31 @@ div.slider {
     div.grid-1-1 {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
+        gap: 5vw;
+    }
+    p.main-photo {
+        position: relative;
+        margin: 0;
+    }
+    p.main-photo::before, p.main-photo::after {
+        content: "";
+        display: block;
+        position: absolute;
+    }
+    p.main-photo::before {
+        bottom: 70px;
+        left: 30vw;
+        width: 150px;
+        height: 150px;
+        background-image: linear-gradient(-45deg, var(--main-color) 0 50%, transparent, transparent 50% 100%);
+        border-radius: 150px;
+    }
+    p.main-photo::after {
+        bottom: 30px;
+        left: 25vw;
+        width: 100px;
+        height: 250px;
+        background-color: rgba(255,255,255,0.2);
     }
 }
 
