@@ -242,7 +242,7 @@ div.general-footer {
 
 footer {
     position: absolute;
-    bottom: 5rem;
+    bottom: 6rem;
 
     & p {
         font-size: 0.9em;
@@ -385,6 +385,14 @@ div.e-content span.credit {
 
 p.photo, div.e-content p + p.photo {
     margin: calc(2rem + 1vw) 0;
+}
+
+p.main-photo {
+    margin: calc(2rem + 1vw) 0;
+
+    & img.jlb {
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 65rem) {
@@ -655,6 +663,45 @@ ul.work-list a:hover::after {
 }
 
 
+
+/* --------------------------- WORK ENTRIES ----------------------------- */
+
+section.work-entry {
+    max-width: 75rem;
+
+    & dl {
+        padding: 0.5rem 0;
+        margin-bottom: 1.5rem;
+        border-top: 1px solid currentColor;
+        border-bottom: 1px solid currentColor;
+    }
+
+    & dl div {
+        display: grid;
+        grid-template-columns: 3em auto;
+        gap: 1.5rem;
+    }
+
+    & div + div {margin-top: 0.5rem;}
+
+    & dt {
+        text-transform: uppercase;
+        font-size: calc(0.7em + 0.75vw);
+    }
+
+    & dd {
+        font-size: calc(0.75em + 0.75vw);
+        line-height: 1.2;
+    }
+
+    & figure.player {
+        background-color: var(--n-dark1);
+        padding: 1.5rem 1rem;
+        margin: 1.5rem 0;
+    }
+}
+
+
 /* --------------------------- PLAYER ---------------------------------- */
 
 div.video-wrap {
@@ -881,6 +928,15 @@ div.main-photo {
     }
 }
 
+@media screen and (min-width: 25rem) {
+    section.work-entry div.group {
+        display: grid;
+        grid-template-columns: 150px auto;
+        align-items: center;
+        gap: 1.5rem;
+    }
+}
+
 @media screen and (min-width: 31rem) {
     nav li {
         font-size: calc(0.95em + 0.75vw);
@@ -933,31 +989,46 @@ div.main-photo {
     div.grid-1-1 {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
+        align-items: start;
         gap: 5vw;
     }
     p.main-photo {
         position: relative;
         margin: 0;
     }
-    p.main-photo::before, p.main-photo::after {
-        content: "";
-        display: block;
-        position: absolute;
+
+    section.work-entry {
+        & dl {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0;
+        }
+        & dl div {
+            display: block;            
+            padding: 1rem 0;
+        }
+        
+        & dl div + div {
+            padding: 1rem 0 1rem 1rem;
+            margin-top: 0;
+            border-left: 1px solid currentColor;
+        }
     }
-    p.main-photo::before {
-        bottom: 70px;
-        left: 30vw;
-        width: 150px;
-        height: 150px;
-        background-image: linear-gradient(-45deg, var(--main-color) 0 50%, transparent, transparent 50% 100%);
-        border-radius: 150px;
-    }
-    p.main-photo::after {
-        bottom: 30px;
-        left: 25vw;
-        width: 100px;
-        height: 250px;
-        background-color: rgba(255,255,255,0.2);
+}
+
+@media screen and (min-width: 62rem) {
+    section.work-entry {
+        position: relative;
+        padding-left: 200px;
+
+        & div.group {display: block;}
+
+        & p.illustration {
+            position: absolute;
+            width: 170px;
+            top: 0;
+            left: 0;
+        }
     }
 }
 
@@ -1066,4 +1137,14 @@ div.main-photo {
     }
 
     footer {bottom: 1.5rem;}
+
+    section.work-entry div.content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        align-items: start;
+        gap: 5vw;
+    }
+    section.work-entry figure.player {
+        margin: 0;
+    }
 }
