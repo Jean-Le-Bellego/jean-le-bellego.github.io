@@ -669,11 +669,27 @@ ul.work-list a:hover::after {
 section.work-entry {
     max-width: 75rem;
 
+    & h2 {
+        font-size: calc(1.5em + 1.5vw);
+        font-variation-settings: var(--regular);
+        margin-bottom: 0.25em;
+    }
+
+    & p, li {
+        font-size: calc(0.85em + 0.5vw);
+    }
+
+    & ul {margin: 1em;}
+
+    & div.group {        
+        margin: 1.5rem 0;
+    }
+
     & dl {
         padding: 0.5rem 0;
         margin-bottom: 1.5rem;
-        border-top: 1px solid currentColor;
-        border-bottom: 1px solid currentColor;
+        border-top: 1px dotted currentColor;
+        border-bottom: 1px dotted currentColor;
     }
 
     & dl div {
@@ -686,19 +702,33 @@ section.work-entry {
 
     & dt {
         text-transform: uppercase;
-        font-size: calc(0.7em + 0.75vw);
+        font-size: clamp(0.75em, calc(0.7em + 0.5vw), 1em);
     }
 
     & dd {
-        font-size: calc(0.75em + 0.75vw);
+        font-size: clamp(0.8em, calc(0.75em + 0.5vw), 1.1em);
         line-height: 1.2;
     }
 
     & figure.player {
         background-color: var(--n-dark1);
-        padding: 1.5rem 1rem;
-        margin: 1.5rem 0;
+        padding: 1rem;
     }
+
+    & div.sound {
+        align-items: center;
+    }
+
+    & p.illustration {display: none;}
+
+    & p.illustration img {
+        vertical-align: bottom;
+    }
+}
+
+
+section.work-entry + section.work-entry {
+    margin-top: calc(4rem + 3vw);
 }
 
 
@@ -788,22 +818,6 @@ button[aria-checked=false] svg.pause {display: none;}
 button[aria-checked=true] svg.play {display: none;}
 button[aria-checked=true] svg.pause {display: block;}
 
-
-section.work-entry {
-    & .description {
-        margin-bottom: 2.5vw;
-    }
-
-    & h2 {
-        font-variation-settings: var(--regular);
-        margin-bottom: 0.25em;
-    }
-}
-
-section.work-entry + section.work-entry {
-    margin-top: 5vw;
-}
-
 @keyframes shine {
     0% {text-shadow: none;}
     50% {text-shadow: 0 0 13px rgb(255, 255, 255);}
@@ -838,22 +852,6 @@ div.slider {
         padding-top: 0.25em;
         animation: 1s slideUp forwards, 1s shine 1s;
     }
-
-    /* & li + li {
-        padding-left: 0.5em;
-        margin-left: 0.5em;
-    }
-    & li + li::before {
-        content: "";
-        display: inline-block;
-        position: relative;
-        top: -0.25cap;
-        left: -0.7cap;
-        width: 0.5cap;
-        height: 0.5cap;
-        background-color: currentColor;
-        border-radius: 0.5cap;
-    } */
 }
 
 
@@ -924,16 +922,20 @@ div.main-photo {
 @media (prefers-reduced-motion) {
     * {
         animation-name: none;
-        animation-duration: 0;
+        animation-duration: 0s;
     }
 }
 
 @media screen and (min-width: 25rem) {
     section.work-entry div.group {
         display: grid;
-        grid-template-columns: 150px auto;
+        grid-template-columns: 90px auto;
         align-items: center;
         gap: 1.5rem;
+    }
+
+    section.work-entry p.illustration {
+        display: block;
     }
 }
 
@@ -962,6 +964,10 @@ div.main-photo {
     header p.logo svg {
         flex: 0 0 2cap;
     }
+
+    section.work-entry div.content {
+        margin-left: calc(90px + 1.5rem);
+    }
 }
 
 @media screen and (min-width: 37rem) {    
@@ -979,6 +985,24 @@ div.main-photo {
 
     div.inner-nav {
         margin-left: calc(3rem + 1vw);
+    }    
+
+    section.work-entry {
+        & dl {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0;
+        }
+        & dl div {
+            display: block;            
+            padding: 0.5rem 0;
+        }
+        
+        & dl div + div {
+            padding: 0.5rem 0 0.5rem 1rem;
+            margin-top: 0;
+            border-left: 1px dotted currentColor;
+        }
     }
 }
 
@@ -996,24 +1020,6 @@ div.main-photo {
         position: relative;
         margin: 0;
     }
-
-    section.work-entry {
-        & dl {
-            display: flex;
-            gap: 1.5rem;
-            padding: 0;
-        }
-        & dl div {
-            display: block;            
-            padding: 1rem 0;
-        }
-        
-        & dl div + div {
-            padding: 1rem 0 1rem 1rem;
-            margin-top: 0;
-            border-left: 1px solid currentColor;
-        }
-    }
 }
 
 @media screen and (min-width: 62rem) {
@@ -1023,11 +1029,24 @@ div.main-photo {
 
         & div.group {display: block;}
 
+        & div.content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            align-items: start;
+            gap: 5vw;
+            margin-left: 0;
+        }
+
+        & dl {order: 2;}
+
         & p.illustration {
             position: absolute;
             width: 170px;
             top: 0;
             left: 0;
+        }
+        & figure.player {
+            margin: 0;
         }
     }
 }
@@ -1122,29 +1141,19 @@ div.main-photo {
         width: 50%;
         top: 3rem;
         right: calc(1.5rem + 1vw);
+    }
 
-        & li {
-            font-size: clamp(0.95em, calc(0.95em + 0.75vw), 1.2em);
-        }
+    ul.links-list li {
+        font-size: clamp(0.95em, calc(0.95em + 0.75vw), 1.2em);
+    }
 
-        & a, a:visited {
-            text-decoration: none;
-            color: var(--body-text);
-        }
-        & a:hover {
-            color: var(--main-color);
-        }
+    ul.links-list a, ul.links-list a:visited {
+        text-decoration: none;
+        color: var(--body-text);
+    }
+    ul.links-list a:hover {
+        color: var(--main-color);
     }
 
     footer {bottom: 1.5rem;}
-
-    section.work-entry div.content {
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        align-items: start;
-        gap: 5vw;
-    }
-    section.work-entry figure.player {
-        margin: 0;
-    }
 }
