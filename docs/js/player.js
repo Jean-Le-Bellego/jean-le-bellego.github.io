@@ -1,7 +1,8 @@
+const figures = document.querySelectorAll("figure.player");
 const audioElements = document.querySelectorAll("figure.player audio");
 
 if(audioElements.length > 0) {
-  let audioContext, soundParent, track, playButton, urlSource;
+  let audioContext, soundParent, track, playButton, urlSource, backg;
 
   audioElements.forEach((sound) => {
     sound.controls = false;
@@ -17,6 +18,14 @@ if(audioElements.length > 0) {
       urlSource = sound.querySelector("source:last-child").getAttribute("src");
     }
 
+    figures.forEach((figure) => {
+      if(figure.classList.contains('no-bg')) {
+        backg = '#3C4E56';
+      } else {
+        backg = '#000';
+      }
+    });
+
     soundParent = sound.parentNode.querySelector("div.wave");
 
     let wavesurfer = WaveSurfer.create({
@@ -25,7 +34,7 @@ if(audioElements.length > 0) {
       width: '85%',
       splitChannels: false,
       normalize: false,
-      waveColor: "#000",
+      waveColor: backg,
       progressColor: "#56B1C6",
       cursorColor: "#F1D648",
       cursorWidth: 2,
