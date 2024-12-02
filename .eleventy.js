@@ -1,5 +1,3 @@
-// const wavejs = require("wavesurfer.js");
-
 module.exports = async function(eleventyConfig) { 
 
   eleventyConfig.setOutputDirectory("docs"); 
@@ -9,6 +7,9 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css/*.*");
   eleventyConfig.addPassthroughCopy("img/**/*.*");
   eleventyConfig.addPassthroughCopy("audio/**/*.*");
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/wavesurfer.js/dist/wavesurfer.min.js": "assets/wavesurfer.min.js",
+  });
   eleventyConfig.addPassthroughCopy("js/*.js");
   eleventyConfig.addPassthroughCopy("sw.js");
   eleventyConfig.addPassthroughCopy("manifest.json");

@@ -4,6 +4,14 @@ const audioElements = document.querySelectorAll("figure.player audio");
 if(audioElements.length > 0) {
   let audioContext, soundParent, track, playButton, urlSource, backg;
 
+  let stopAll = function() {
+    audioElements.forEach((s) => {      
+      s.stop;
+      s.currentTime = 0;
+      s.nextElementSibling.dataset.playing = "false";
+    });
+  };
+
   audioElements.forEach((sound) => {
     sound.controls = false;
     audioContext = new AudioContext();
@@ -45,6 +53,9 @@ if(audioElements.length > 0) {
 
     playButton.addEventListener("click", (e) => {
         let theButton = e.target;
+
+        // stopAll();
+
         // Check if context is in suspended state (autoplay policy)
         if (audioContext.state === "suspended") {
           audioContext.resume();
