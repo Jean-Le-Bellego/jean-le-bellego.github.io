@@ -73,6 +73,12 @@
                 <li>
                     <a href="a-propos.html">A Propos</a>
                 </li>
+                <li>
+                    <a href="contact.html" 
+                    >
+                        Contact                        
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -155,6 +161,46 @@
     <section class="audio-wrap">
       <h2>Écoute</h2>
       <figure class="player">
+        <figcaption>Ouverture Porte</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/Sable_Noir_Repos.ogg" type="audio/ogg" />
+            <source src="audio/MP3/Sable_Noir_Repos.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <title>Lire audio</title>
+              <use href="/img/sprite.svg#play">
+            </svg>
+            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>Pauser audio</title>
+                <use href="/img/sprite.svg#pause">
+            </svg>
+          </button>	
+          <div class="wave"></div>		  
+        </div>
+      </figure>       
+      <figure class="player">
+        <figcaption>Impulse</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/Impulse.ogg" type="audio/ogg" />
+            <source src="audio/MP3/Impulse.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <title>Lire audio</title>
+              <use href="/img/sprite.svg#play">
+            </svg>
+            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>Pauser audio</title>
+                <use href="/img/sprite.svg#pause">
+            </svg>
+          </button>	
+          <div class="wave"></div>		  
+        </div>
+      </figure> 
+      <figure class="player">
         <figcaption lang="en">Ascent</figcaption>
         <div class="sound">
           <audio controls>
@@ -175,31 +221,11 @@
         </div>
       </figure> 
       <figure class="player">
-        <figcaption>Entrée</figcaption>
+        <figcaption lang="en">Le Trésor</figcaption>
         <div class="sound">
           <audio controls>
-            <source src="audio/OGG/Sable_Noir_Entree.ogg" type="audio/ogg" />
-            <source src="audio/MP3/Sable_Noir_Entree.mp3" type="audio/mp3" />
-          </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
-            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <title>Lire audio</title>
-              <use href="/img/sprite.svg#play">
-            </svg>
-            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <title>Pauser audio</title>
-                <use href="/img/sprite.svg#pause">
-            </svg>
-          </button>	
-          <div class="wave"></div>		  
-        </div>
-      </figure> 
-      <figure class="player">
-        <figcaption>Repos</figcaption>
-        <div class="sound">
-          <audio controls>
-            <source src="audio/OGG/Sable_Noir_Repos.ogg" type="audio/ogg" />
-            <source src="audio/MP3/Sable_Noir_Repos.mp3" type="audio/mp3" />
+            <source src="audio/OGG/The_Treasure.ogg" type="audio/ogg" />
+            <source src="audio/MP3/The_Treasure.mp3" type="audio/mp3" />
           </audio>
           <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -235,31 +261,11 @@
         </div>
       </figure> 
       <figure class="player">
-        <figcaption>Impulse</figcaption>
+        <figcaption>Explosion verrière</figcaption>
         <div class="sound">
           <audio controls>
-            <source src="audio/OGG/Impulse.ogg" type="audio/ogg" />
-            <source src="audio/MP3/Impulse.mp3" type="audio/mp3" />
-          </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
-            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <title>Lire audio</title>
-              <use href="/img/sprite.svg#play">
-            </svg>
-            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <title>Pauser audio</title>
-                <use href="/img/sprite.svg#pause">
-            </svg>
-          </button>	
-          <div class="wave"></div>		  
-        </div>
-      </figure> 
-      <figure class="player">
-        <figcaption lang="en">The Treasure</figcaption>
-        <div class="sound">
-          <audio controls>
-            <source src="audio/OGG/The_Treasure.ogg" type="audio/ogg" />
-            <source src="audio/MP3/The_Treasure.mp3" type="audio/mp3" />
+            <source src="audio/OGG/Sable_Noir_Entree.ogg" type="audio/ogg" />
+            <source src="audio/MP3/Sable_Noir_Entree.mp3" type="audio/mp3" />
           </audio>
           <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -327,7 +333,7 @@
             <li><a href="index.html#savoir-faire">Savoir Faire</a></li>
             <li><a href="index.html#projets">Projets</a></li>
             <li><a href="a-propos.html">A Propos</a></li>
-            <li><a href="mailto:jean.le_bellego@isen.yncrea.fr">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         <footer>
             <p>Ce site ainsi que toutes compositions musicales 

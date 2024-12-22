@@ -73,6 +73,12 @@
                 <li>
                     <a href="a-propos.html">A Propos</a>
                 </li>
+                <li>
+                    <a href="contact.html" 
+                    >
+                        Contact                        
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -167,6 +173,26 @@
     <section class="audio-wrap">
       <h2>Écoute</h2>
       <figure class="player">
+        <figcaption>Le Malaise</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/Le_Malaise.ogg" type="audio/ogg" />
+            <source src="audio/MP3/Le_Malaise.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <title>Lire audio</title>
+              <use href="/img/sprite.svg#play">
+            </svg>
+            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>Pauser audio</title>
+                <use href="/img/sprite.svg#pause">
+            </svg>
+          </button>	
+          <div class="wave"></div>		  
+        </div>
+      </figure>
+      <figure class="player">
         <figcaption>La Cuisine</figcaption>
         <div class="sound">
           <audio controls>
@@ -207,51 +233,31 @@
         </div>
       </figure>
       <figure class="player">
-        <figcaption>Le Bourgeois Gentilhomme</figcaption>
-        <div class="sound">
-          <audio controls>
-            <source src="audio/OGG/Le_Bourgeois_Gentilhomme.ogg" type="audio/ogg" />
-            <source src="audio/MP3/Le_Bourgeois_Gentilhomme.mp3" type="audio/mp3" />
-          </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
-            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <title>Lire audio</title>
-              <use href="/img/sprite.svg#play">
-            </svg>
-            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <title>Pauser audio</title>
-                <use href="/img/sprite.svg#pause">
-            </svg>
-          </button>	
-          <div class="wave"></div>		  
-        </div>
-      </figure>
-      <figure class="player">
-        <figcaption>Le Malaise</figcaption>
-        <div class="sound">
-          <audio controls>
-            <source src="audio/OGG/Le_Malaise.ogg" type="audio/ogg" />
-            <source src="audio/MP3/Le_Malaise.mp3" type="audio/mp3" />
-          </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
-            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-              <title>Lire audio</title>
-              <use href="/img/sprite.svg#play">
-            </svg>
-            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                <title>Pauser audio</title>
-                <use href="/img/sprite.svg#pause">
-            </svg>
-          </button>	
-          <div class="wave"></div>		  
-        </div>
-      </figure>
-      <figure class="player">
         <figcaption>Le Service</figcaption>
         <div class="sound">
           <audio controls>
             <source src="audio/OGG/Le_Service.ogg" type="audio/ogg" />
             <source src="audio/MP3/Le_Service.mp3" type="audio/mp3" />
+          </audio>
+          <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
+            <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <title>Lire audio</title>
+              <use href="/img/sprite.svg#play">
+            </svg>
+            <svg class="pause" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <title>Pauser audio</title>
+                <use href="/img/sprite.svg#pause">
+            </svg>
+          </button>	
+          <div class="wave"></div>		  
+        </div>
+      </figure>
+      <figure class="player">
+        <figcaption>Le Bourgeois Gentilhomme</figcaption>
+        <div class="sound">
+          <audio controls>
+            <source src="audio/OGG/Le_Bourgeois_Gentilhomme.ogg" type="audio/ogg" />
+            <source src="audio/MP3/Le_Bourgeois_Gentilhomme.mp3" type="audio/mp3" />
           </audio>
           <button data-playing="false" role="switch" aria-label="Lire/pauser audio" aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
@@ -299,7 +305,7 @@
             <li><a href="index.html#savoir-faire">Savoir Faire</a></li>
             <li><a href="index.html#projets">Projets</a></li>
             <li><a href="a-propos.html">A Propos</a></li>
-            <li><a href="mailto:jean.le_bellego@isen.yncrea.fr">Contact</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
         <footer>
             <p>Ce site ainsi que toutes compositions musicales 

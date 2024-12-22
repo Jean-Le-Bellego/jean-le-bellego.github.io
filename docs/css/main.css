@@ -66,6 +66,7 @@ h1, h2, h3, h4 {
 h2 {
     font-size: calc(1.5em + 1vw);
     font-variation-settings: var(--bold);
+    text-transform: uppercase;
     color: var(--secondary-color);
     background-color: var(--bg-color);
     margin-bottom: 0.8em;
@@ -232,7 +233,8 @@ div.general-footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: bottom -13px;
-    padding: 2rem calc(1.5rem + 1vw) 4rem;
+    padding: 2rem calc(1.5rem + 1vw) 3rem;
+    margin-bottom: 65px;
     z-index: 2;
 
     & p.logo svg {
@@ -296,8 +298,9 @@ nav {
         padding: 1rem 0.5rem;
     }
 
-    & a:hover {
-        background-color: rgba(255,255,255,0.2);
+    & a[aria-current] {
+        color: var(--main-color);
+        background-color: var(--bg-color);
     }
 }
 
@@ -347,6 +350,7 @@ article {
     & h1 {
         font-size: calc(1em + 6vw);
         font-variation-settings: var(--bold);
+        text-transform: uppercase;
         color: var(--secondary-color);
         background-color: var(--bg-color);
         margin-bottom: 0.5rem;
@@ -484,6 +488,10 @@ div.inner-nav ul {
         background-size: 1.3rem;
     }
 
+    & li a:hover {
+        color: var(--main-color);
+    }
+
     & li:first-of-type a {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFF'%3E%3Cpath d='M8 12L14 6V18L8 12Z'%3E%3C/path%3E%3C/svg%3E");
         background-position: 0 0.1em;
@@ -603,6 +611,7 @@ ul.work-list {
         display: flex;
         flex-direction: column;
         font-size: 100%;
+        line-height: 1;
     }
 
     & li + li {
@@ -636,6 +645,7 @@ ul.work-list {
     & span {
         display: block;
         font-size: clamp(0.95rem, 90%, 1.25rem);
+        margin-top: 0.5rem;
     }
 
     & strong {        
@@ -647,12 +657,13 @@ ul.work-list {
 
 ul.work-list a {
     display: block;
-    font-variation-settings: var(--extra-light);
+    font-variation-settings: var(--bold);
     text-transform: uppercase;
     text-decoration: none;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.25rem;
 }
+
 ul.work-list a::after {
     position: absolute;
     content: "";
@@ -773,7 +784,6 @@ section.audio-wrap {
     padding: calc(1.5rem + 1vw);
 
     & h2 {
-        font-variation-settings: var(--light);
         background-color: rgba(0,0,0,0);
     }
 }
@@ -1134,9 +1144,10 @@ div.main-photo {
         & ul {
             justify-content: flex-start;
             gap: 8vw;
+            margin-left: -0.5rem;
         }
 
-        & a, a:visited {
+        & a:not([aria-current]), a:visited:not([aria-current]) {
             color: var(--text-color);
             background-color: rgba(0,0,0,0);
         }
@@ -1174,9 +1185,10 @@ div.main-photo {
         color: var(--main-color);
     }
 
+    div.general-footer {margin-bottom: 0;}
     footer {
         position: absolute;
-        width: 80%;
+        width: calc(100% - calc(3rem + 2vw));
         bottom: 1.5rem;
     }
 }
