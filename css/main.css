@@ -935,6 +935,9 @@ div.main-photo {
     margin: 5vw 0;
 }
 
+p.main-photo.contact {
+    display: none;
+}
 
 
 /* ---------------------------- MEDIA QUERIES --------------------------------- */
@@ -1035,6 +1038,9 @@ div.main-photo {
     p.main-photo {
         position: relative;
         margin: 0;
+    }
+    p.main-photo.contact {
+        display: block;
     }
 }
 
