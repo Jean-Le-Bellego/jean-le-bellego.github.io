@@ -1159,7 +1159,7 @@ p.main-photo.contact {
             background-color: rgba(0,0,0,0);
         }
 
-        & a:hover {
+        & a:not([aria-current]):hover {
             color: var(--main-color);
         }
     }
