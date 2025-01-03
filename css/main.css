@@ -234,7 +234,6 @@ div.general-footer {
     background-size: cover;
     background-position-y: bottom -13px;
     padding: 2rem calc(1.5rem + 1vw) 3rem;
-    margin-bottom: 65px;
     z-index: 2;
 
     & p.logo svg {
@@ -837,6 +836,10 @@ button[aria-checked=false] svg.play {display: block;}
 button[aria-checked=false] svg.pause {display: none;}
 button[aria-checked=true] svg.play {display: none;}
 button[aria-checked=true] svg.pause {display: block;}
+/* button[data-playing=false] svg.play {display: block;}
+button[data-playing=false] svg.pause {display: none;}
+button[data-playing=true] svg.play {display: none;}
+button[data-playing=true] svg.pause {display: block;} */
 
 @keyframes shine {
     0% {text-shadow: none;}

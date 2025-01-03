@@ -1,32 +1,40 @@
-const figures = document.querySelectorAll("figure.player");
+const allPlayBts = document.querySelectorAll('button[data-playing]');
 const audioElements = document.querySelectorAll("figure.player audio");
+const wsArray = [];
 
-if(audioElements.length > 0) {
-  let audioContext, soundParent, track, playButton, urlSource, backg;
+if (allPlayBts.length > 0) {
 
-  audioElements.forEach((sound) => {
-    sound.controls = false;
-    audioContext = new AudioContext();
-    track = audioContext.createMediaElementSource(sound);
-    track.connect(audioContext.destination);
+  let stopAll = function (array) {
+    array.forEach((s) => {
+      s.pause();
+    });
+    allPlayBts.forEach((bt) => {
+      bt.dataset.playing = "false";
+      bt.setAttribute('aria-checked', "false");
+    });
+  };
 
-    playButton = sound.nextElementSibling;
+  allPlayBts.forEach((bt) => {
 
-    if (sound.canPlayType("audio/ogg")) {
-      urlSource = sound.querySelector("source:first-child").getAttribute("src");
+    let backg, audioId, audioEl, urlSource;
+    let parentFigure = bt.parentElement.parentElement;
+    let soundParent = bt.nextElementSibling;
+
+    if (parentFigure.classList.contains('no-bg')) {
+      backg = '#3C4E56';
     } else {
-      urlSource = sound.querySelector("source:last-child").getAttribute("src");
+      backg = '#000';
     }
 
-    figures.forEach((figure) => {
-      if(figure.classList.contains('no-bg')) {
-        backg = '#3C4E56';
-      } else {
-        backg = '#000';
-      }
-    });
+    audioId = bt.getAttribute('aria-controls');
+    audioEl = document.getElementById(audioId);
+    audioEl.controls = false;
 
-    soundParent = sound.parentNode.querySelector("div.wave");
+    if (audioEl.canPlayType("audio/ogg")) {
+      urlSource = audioEl.querySelector("source:first-child").getAttribute("src");
+    } else {
+      urlSource = audioEl.querySelector("source:last-child").getAttribute("src");
+    }
 
     let wavesurfer = WaveSurfer.create({
       container: soundParent,
@@ -43,48 +51,23 @@ if(audioElements.length > 0) {
       url: urlSource,
     });
 
-    let stopAll = function() {
-      audioElements.forEach((s) => {      
-        s.stop;
-        s.currentTime = 0;
-        s.nextElementSibling.dataset.playing = "false";
+    wsArray.push(wavesurfer);
+
+    bt.addEventListener('click', (e) => {
+      theButton = e.target;
+
+      if (theButton.dataset.playing === "false") {
+        stopAll(wsArray);
+        theButton.dataset.playing = "true";
+        wavesurfer.play();
+      } else if (theButton.dataset.playing === "true") {
+        theButton.dataset.playing = "false";
         wavesurfer.pause();
-      });
-    };
+      }
 
-    playButton.addEventListener("click", (e) => {
-        let theButton = e.target;
+      let state = theButton.getAttribute('aria-checked') === "true" ? true : false;
+      theButton.setAttribute('aria-checked', state ? "false" : "true");
 
-        // Check if context is in suspended state (autoplay policy)
-        if (audioContext.state === "suspended") {
-          audioContext.resume();
-        }
-
-        // Play or pause track depending on state
-        if (theButton.dataset.playing === "false") {
-          //sound.play();
-          theButton.dataset.playing = "true";
-          wavesurfer.play();
-        } else if (theButton.dataset.playing === "true") {
-          //sound.pause();
-          theButton.dataset.playing = "false";
-          wavesurfer.pause();
-        }
-
-        let state = theButton.getAttribute('aria-checked') === "true" ? true : false;
-	      theButton.setAttribute( 'aria-checked', state ? "false" : "true" );
-
-        wavesurfer.on('finish', () => {
-          theButton.dataset.playing = "false";
-          theButton.setAttribute( "aria-checked", "false" );
-        });
-        wavesurfer.on('click', () => {          
-          theButton.dataset.playing = "true";
-          theButton.setAttribute( "aria-checked", "true" );
-          wavesurfer.play();
-        })        
-
-      }, false
-    );
+    });
   });
 }

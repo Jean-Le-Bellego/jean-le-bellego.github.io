@@ -114,7 +114,7 @@
     <div class="e-content">
       <p>
         <strong>Le Banquet</strong> est une expérience sonore immersive à 
-        découvrir dans les salles du <a href="https://www.chateau-cadillac.fr/">Château de Cadillac</a>. 
+        découvrir dans les salles du <a href="https://www.chateau-cadillac.fr/" target="_blank">Château de Cadillac</a>. 
         Pendant quarante 
         minutes, les visiteurs équipés d'un casque audio sont projetés dans 
         un banquet qui aurait pu se dérouler au temps de Louis XIII. 
@@ -124,8 +124,8 @@
       </p>
       <p>
         Ce projet est le fruit de la collaboration entre le 
-        <a href="https://www.monuments-nationaux.fr/">Centre des Monuments Nationaux</a> et le 
-        <a href="https://tamanoir.studio/">Tamanoir Immersive Studio</a>.
+        <a href="https://www.monuments-nationaux.fr/" target="_blank">Centre des Monuments Nationaux</a> et le 
+        <a href="https://tamanoir.studio/" target="_blank">Tamanoir Immersive Studio</a>.
       </p>
 
       <p class="photo">
@@ -176,11 +176,16 @@
       <figure class="player">
         <figcaption>Le Malaise</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="sound-ban-01" controls>
             <source src="audio/OGG/Le_Malaise.ogg" type="audio/ogg" />
             <source src="audio/MP3/Le_Malaise.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser : Le Malaise" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser : Le Malaise" 
+            aria-controls="sound-ban-01"
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -196,11 +201,16 @@
       <figure class="player">
         <figcaption>La Cuisine</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="sound-ban-02" controls>
             <source src="audio/OGG/La_Cuisine.ogg" type="audio/ogg" />
             <source src="audio/MP3/La_Cuisine.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser : La Cuisine" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser : La Cuisine" 
+            aria-controls="sound-ban-02"
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -216,11 +226,16 @@
       <figure class="player">
         <figcaption>La Marquise</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="sound-ban-03" controls>
             <source src="audio/OGG/La_Marquise.ogg" type="audio/ogg" />
             <source src="audio/MP3/La_Marquise.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser : La Marquise" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser : La Marquise"  
+            aria-controls="sound-ban-03"
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -236,11 +251,16 @@
       <figure class="player">
         <figcaption>Le Service</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="sound-ban-04" controls>
             <source src="audio/OGG/Le_Service.ogg" type="audio/ogg" />
             <source src="audio/MP3/Le_Service.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser : Le Service" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser : Le Service" 
+            aria-controls="sound-ban-04"
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -256,11 +276,16 @@
       <figure class="player">
         <figcaption>Le Bourgeois Gentilhomme</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="sound-ban-05" controls>
             <source src="audio/OGG/Le_Bourgeois_Gentilhomme.ogg" type="audio/ogg" />
             <source src="audio/MP3/Le_Bourgeois_Gentilhomme.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser : Le Bourgeois Gentilhomme" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser : Le Bourgeois Gentilhomme" 
+            aria-controls="sound-ban-05"
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -313,7 +338,7 @@
                 présentées sont la propriété de Jean Le Bellego.
              Web Design et intégration par <a href="https://gericci.me">Ge Ricci</a></p>
             <p class="copy">
-                &copy; Jean Le Bellego, 2024
+                &copy; Jean Le Bellego, 2025
             </p>
         </footer>
     </div>

@@ -42,8 +42,8 @@ ogImage: first-steps/thumb-og.png
       <p>Ce spectacle veut faire vivre le frisson de la rencontre entre 5 
         danseurs et 24 membres du public sur scène, devant une salle de 250 
         spectateurs. Il est le fruit d'une collaboration inédite entre le 
-        <a href="https://tamanoir.studio/">Tamanoir Immersive Studio</a> et le 
-        <a href="https://www.hk.artsfestival.org/" lang="en">Hong Kong Art Festival</a>.</p>
+        <a href="https://tamanoir.studio/" target="_blank">Tamanoir Immersive Studio</a> et le 
+        <a href="https://www.hk.artsfestival.org/" target="_blank" lang="en">Hong Kong Art Festival</a>.</p>
 
       <p class="photo">
         <img 
@@ -130,11 +130,16 @@ ogImage: first-steps/thumb-og.png
       <figure class="player">
         <figcaption lang="en">The Mask</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="s-themask" controls>
             <source src="audio/OGG/The-Mask.ogg" type="audio/ogg" />
             <source src="audio/MP3/The-Mask.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser The Mask" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser The Mask" 
+            aria-controls="s-themask" 
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -150,11 +155,16 @@ ogImage: first-steps/thumb-og.png
       <figure class="player">
         <figcaption>Duende</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="s-duende" controls>
             <source src="audio/OGG/Duende.ogg" type="audio/ogg" />
             <source src="audio/MP3/Duende.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser Duende" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser Duende" 
+            aria-controls="s-duende" 
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -170,11 +180,16 @@ ogImage: first-steps/thumb-og.png
       <figure class="player">
         <figcaption>Absorb</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="s-absorb" controls>
             <source src="audio/OGG/ShoesDance.ogg" type="audio/ogg" />
             <source src="audio/MP3/ShoesDance.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser Absorb" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser Absorb" 
+            aria-controls="s-absorb" 
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">

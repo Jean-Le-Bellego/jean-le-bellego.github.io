@@ -108,7 +108,7 @@
       <p>L’installation invite les participants à découvrir les 
         whisky de la marque avec une approche synesthésique, 
         mêlant dégustation, lumière et son quadriphonique.</p>
-      <p>La gamme ré:imagined de <a href="https://www.glenfiddich.com/fr-fr/">Glenfiddich</a> 
+      <p>La gamme ré:imagined de <a href="https://www.glenfiddich.com/fr-fr/" target="_blank">Glenfiddich</a> 
         se compose de 3 produits 
         identifiés clairement par différentes manières de percevoir 
         le temps&nbsp;:</p>
@@ -146,11 +146,16 @@
       <figure class="player">
         <figcaption lang="en">Cumulative Time</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="sound-glen-01" controls>
             <source src="audio/OGG/Cumulative_Time_Stereo.ogg" type="audio/ogg" />
             <source src="audio/MP3/Cumulative_Time.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser Cumulative Time" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser Cumulative Time" 
+            aria-controls="sound-glen-01" 
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -166,11 +171,16 @@
       <figure class="player">
         <figcaption lang="en">Suspended Time</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="sound-glen-02" controls>
             <source src="audio/OGG/Suspended_Time_Stereo.ogg" type="audio/ogg" />
             <source src="audio/MP3/Suspended_Time.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser Suspended Time" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser Suspended Time" 
+            aria-controls="sound-glen-02" 
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -186,11 +196,16 @@
       <figure class="player">
         <figcaption lang="en">Simultaneous Time</figcaption>
         <div class="sound">
-          <audio controls>
+          <audio id="sound-glen-03" controls>
             <source src="audio/OGG/Simultaneous_Time_Stereo.ogg" type="audio/ogg" />
             <source src="audio/MP3/Simultaneous_Time.mp3" type="audio/mp3" />
           </audio>
-          <button data-playing="false" role="switch" aria-label="Lire/pauser Simultaneous Time" aria-checked="false">
+          <button 
+            data-playing="false" 
+            role="switch" 
+            aria-label="Lire/pauser Simultaneous Time" 
+            aria-controls="sound-glen-03" 
+            aria-checked="false">
             <svg class="play" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
               <title>Lire audio</title>
               <use href="/img/sprite.svg#play">
@@ -243,7 +258,7 @@
                 présentées sont la propriété de Jean Le Bellego.
              Web Design et intégration par <a href="https://gericci.me">Ge Ricci</a></p>
             <p class="copy">
-                &copy; Jean Le Bellego, 2024
+                &copy; Jean Le Bellego, 2025
             </p>
         </footer>
     </div>
