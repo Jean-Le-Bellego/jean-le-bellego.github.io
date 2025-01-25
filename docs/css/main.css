@@ -237,7 +237,7 @@ div.general-footer {
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: bottom -13px;
-    padding: 2rem calc(1.5rem + 1vw) 3rem;
+    padding: 2rem calc(1.5rem + 1vw) 6rem;
     z-index: 2;
 
     & p.logo svg {
@@ -299,7 +299,7 @@ nav {
         text-align: center;
         color: var(--main-color);
         background-color: var(--bg-color);
-        padding: 1rem 0.5rem;
+        padding: 1.25rem 0.5rem;
     }
 
     & a[aria-current] {
