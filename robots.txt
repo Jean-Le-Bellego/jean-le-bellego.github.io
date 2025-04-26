@@ -1,6 +1,5 @@
 User-agent: Twitterbot
-Disallow:
-Allow: /img
+Disallow: /
 
 User-agent: CCBot
 Disallow: /

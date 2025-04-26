@@ -2,8 +2,9 @@ const cacheName = 'lebellego-24';
 
 const filesToCache = [
   '/',
+  '/css/main.css',
   '/css/vars.css',
-  '/css/AnekDevanagari-VariableFont_wdth,wght.ttf',
+  '/css/AfacadFlux-VariableFont_slnt,wght.ttf',
   '/img/logo.svg'
 ];
 

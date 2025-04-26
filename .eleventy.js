@@ -13,7 +13,7 @@ module.exports = async function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js/*.js");
   eleventyConfig.addPassthroughCopy("sw.js");
   eleventyConfig.addPassthroughCopy("manifest.json");
-  eleventyConfig.addPassthroughCopy("robot.txt");
+  eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("cv_Jean_LeBellego.pdf");
  
 };

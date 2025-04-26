@@ -340,7 +340,7 @@ h2.whole {
     letter-spacing: -3px;
     color: var(--n-dark0);
     background-color: var(--bg-color);
-    margin-bottom: 0;
+    margin-bottom: 0.5em;
 }
 
 /* --- ARTICLE --- */
